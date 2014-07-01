@@ -22,8 +22,8 @@
 "     SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 " }}}
 
-if !exists('*g:textobj_function_ruby_select')
-  function! g:textobj_function_ruby_select(object_type)
+if !exists('*s:textobj_function_ruby_select')
+  function! s:textobj_function_ruby_select(object_type)
       return s:select_{a:object_type}()
   endfunction
 
@@ -69,7 +69,7 @@ if !exists('*g:textobj_function_ruby_select')
   endfunction
 endif
 
-let b:textobj_function_select = function('g:textobj_function_ruby_select')
+let b:textobj_function_select = function('s:textobj_function_ruby_select')
 
 if exists('b:undo_ftplugin')
   let b:undo_ftplugin .= '|'
